@@ -177,6 +177,7 @@ Error: Network timeout
    # Dans Vercel Dashboard > Settings > Environment Variables
    DATABASE_URL=mongodb+srv://username:password@cluster.mongodb.net/nova-store
    CLOUDINARY_CLOUD_NAME=dfyeulpm4
+   CLOUDINARY_UPLOAD_PRESET=novastore
    CLOUDINARY_API_KEY=232161939884944
    CLOUDINARY_API_SECRET=zZizAIikNAmRDgug7aNPRS6GkCM
    ```
@@ -195,6 +196,7 @@ Error: Network timeout
 DATABASE_URL="mongodb+srv://prod-user:secure-password@prod-cluster.mongodb.net/nova-store-prod?retryWrites=true&w=majority"
 NEXT_PUBLIC_APP_URL="https://votre-domaine.vercel.app"
 CLOUDINARY_CLOUD_NAME="dfyeulpm4"
+CLOUDINARY_UPLOAD_PRESET="novastore"
 CLOUDINARY_API_KEY="232161939884944"
 CLOUDINARY_API_SECRET="zZizAIikNAmRDgug7aNPRS6GkCM"
 ```

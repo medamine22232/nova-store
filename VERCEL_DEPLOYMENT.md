@@ -46,6 +46,7 @@ TELEGRAM_CHAT_ID=-4809800938
 ### Cloudinary (Required for Image Uploads)
 ```bash
 CLOUDINARY_CLOUD_NAME=dfyeulpm4
+CLOUDINARY_UPLOAD_PRESET=novastore
 CLOUDINARY_API_KEY=232161939884944
 CLOUDINARY_API_SECRET=zZizAIikNAmRDgug7aNPRS6GkCM
 ```
@@ -53,6 +54,7 @@ CLOUDINARY_API_SECRET=zZizAIikNAmRDgug7aNPRS6GkCM
 **Get Cloudinary credentials**:
 ✅ Already configured with your credentials:
 - Cloud Name: `dfyeulpm4`
+- Upload Preset: `novastore`
 - API Key: `232161939884944`
 - API Secret: `zZizAIikNAmRDgug7aNPRS6GkCM`
 
