@@ -122,6 +122,35 @@ cd "d:\XAMPP\htdocs\nova store"
 npx prisma db push --force-reset
 ```
 
+### Configuration MongoDB (Nouvelle base de données)
+
+Le projet utilise maintenant MongoDB au lieu de SQLite pour une meilleure compatibilité avec le déploiement.
+
+#### Option 1: MongoDB Local
+1. Installez MongoDB Community Server depuis [mongodb.com](https://www.mongodb.com/try/download/community)
+2. Démarrez le service MongoDB
+3. Utilisez cette DATABASE_URL dans `.env`:
+   ```
+   DATABASE_URL="mongodb://localhost:27017/nova-store"
+   ```
+
+#### Option 2: MongoDB Atlas (Cloud - Recommandé pour la production)
+1. Créez un compte gratuit sur [MongoDB Atlas](https://www.mongodb.com/atlas)
+2. Créez un cluster (M0 gratuit)
+3. Créez un utilisateur de base de données
+4. Obtenez la chaîne de connexion
+5. Utilisez cette DATABASE_URL dans `.env`:
+   ```
+   DATABASE_URL="mongodb+srv://username:password@cluster.mongodb.net/nova-store?retryWrites=true&w=majority"
+   ```
+
+#### Après configuration MongoDB:
+```powershell
+cd "d:\XAMPP\htdocs\nova store"
+npx prisma generate
+npx prisma db push
+```
+
 ---
 
 ## 🎨 Personnalisation
