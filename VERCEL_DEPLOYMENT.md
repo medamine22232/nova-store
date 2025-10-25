@@ -45,15 +45,16 @@ TELEGRAM_CHAT_ID=-4809800938
 
 ### Cloudinary (Required for Image Uploads)
 ```bash
-CLOUDINARY_CLOUD_NAME=your-cloudinary-cloud-name
-CLOUDINARY_API_KEY=your-cloudinary-api-key
-CLOUDINARY_API_SECRET=your-cloudinary-api-secret
+CLOUDINARY_CLOUD_NAME=dfyeulpm4
+CLOUDINARY_API_KEY=232161939884944
+CLOUDINARY_API_SECRET=zZizAIikNAmRDgug7aNPRS6GkCM
 ```
 
 **Get Cloudinary credentials**:
-1. Sign up at [cloudinary.com](https://cloudinary.com)
-2. Go to Dashboard
-3. Copy Cloud Name, API Key, and API Secret
+✅ Already configured with your credentials:
+- Cloud Name: `dfyeulpm4`
+- API Key: `232161939884944`
+- API Secret: `zZizAIikNAmRDgug7aNPRS6GkCM`
 
 ## 📱 Step-by-Step Deployment
 
