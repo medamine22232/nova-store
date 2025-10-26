@@ -1,121 +1,238 @@
-# 🛍️ Nova Store - E-Commerce Platform
+# 🛍️ Nova Store - Simple Landing Page# 🛍️ Nova Store - E-Commerce Platform
 
-Une boutique en ligne professionnelle construite avec Next.js, TypeScript, Prisma et Tailwind CSS.
 
-## ✨ Fonctionnalités
 
-- 🏪 **Boutique en ligne** : Affichage des produits avec images, prix et stock
-- 🛒 **Système de commande** : Formulaire de commande avec validation (paiement à la livraison)
-- 📱 **Design responsive** : Optimisé pour mobile et desktop
-- 🎨 **Design professionnel** : Couleurs personnalisées (Orange #F89520 et Noir)
-- 👨‍💼 **Panel Admin** : Interface pour gérer les produits sans coder
+A simple, clean product landing page that sends orders directly to Telegram.Une boutique en ligne professionnelle construite avec Next.js, TypeScript, Prisma et Tailwind CSS.
+
+
+
+## ✨ Features## ✨ Fonctionnalités
+
+
+
+- **Single Product Display**: Show one product with name, price, description, and stock- 🏪 **Boutique en ligne** : Affichage des produits avec images, prix et stock
+
+- **Order Form**: Simple form to collect customer details- 🛒 **Système de commande** : Formulaire de commande avec validation (paiement à la livraison)
+
+- **Telegram Integration**: Orders sent directly to your Telegram chat- 📱 **Design responsive** : Optimisé pour mobile et desktop
+
+- **Mobile Responsive**: Works perfectly on all devices- 🎨 **Design professionnel** : Couleurs personnalisées (Orange #F89520 et Noir)
+
+- **No Database**: No complex database setup required- 👨‍💼 **Panel Admin** : Interface pour gérer les produits sans coder
+
 - ✅ **Validation des formulaires** : Format de téléphone tunisien
-- 💾 **Base de données** : SQLite avec Prisma ORM
 
-## 🚀 Installation
+## 🚀 Quick Setup- 💾 **Base de données** : SQLite avec Prisma ORM
 
-### Prérequis
 
-- Node.js 18+ installé sur votre machine
-- npm ou yarn
 
-### Étapes d'installation
+### 1. Clone & Install## 🚀 Installation
 
-1. **Ouvrir le terminal dans le dossier du projet**
+```bash
 
-```powershell
-cd "d:\XAMPP\htdocs\nova store"
+git clone https://github.com/medamine22232/nova-store.git### Prérequis
+
+cd nova-store
+
+npm install- Node.js 18+ installé sur votre machine
+
+```- npm ou yarn
+
+
+
+### 2. Configure Telegram Bot### Étapes d'installation
+
+1. Message @BotFather on Telegram
+
+2. Create a new bot with `/newbot`1. **Ouvrir le terminal dans le dossier du projet**
+
+3. Get your bot token
+
+4. Add the bot to your chat/group```powershell
+
+5. Get your chat IDcd "d:\XAMPP\htdocs\nova store"
+
 ```
 
-2. **Installer les dépendances**
+### 3. Set Environment Variables
 
-```powershell
-npm install
+Copy `.env.example` to `.env` and update:2. **Installer les dépendances**
+
+```bash
+
+NEXT_PUBLIC_APP_URL="http://localhost:3000"```powershell
+
+TELEGRAM_BOT_TOKEN="your-bot-token-here"npm install
+
+TELEGRAM_CHAT_ID="your-chat-id-here"```
+
 ```
 
 3. **Initialiser la base de données**
 
-```powershell
-npx prisma generate
-npx prisma db push
-```
+### 4. Customize Your Product
 
-4. **Lancer le serveur de développement**
+Edit the product data in `app/page.tsx`:```powershell
 
-```powershell
-npm run dev
+```javascriptnpx prisma generate
+
+const PRODUCT = {npx prisma db push
+
+  id: '1',```
+
+  name: 'Your Product Name',
+
+  description: 'Your product description here...',4. **Lancer le serveur de développement**
+
+  price: 999.99,
+
+  image: 'https://your-image-url.com/image.jpg',```powershell
+
+  stock: 10npm run dev
+
+};```
+
 ```
 
 5. **Ouvrir le navigateur**
 
-Visitez: `http://localhost:3000`
+### 5. Run the Application
 
-## 📖 Utilisation
+```bashVisitez: `http://localhost:3000`
 
-### Page Principale (Boutique)
+npm run dev
+
+```## 📖 Utilisation
+
+
+
+Visit `http://localhost:3000` to see your landing page!### Page Principale (Boutique)
+
 - Accédez à `http://localhost:3000`
-- Parcourez tous les produits disponibles
+
+## 📱 How It Works- Parcourez tous les produits disponibles
+
 - Cliquez sur un produit pour voir les détails et passer commande
 
-### Page Produit
-- Remplissez le formulaire avec:
-  - Nom complet
-  - Numéro de téléphone tunisien (ex: 20123456 ou +216 20123456)
-  - Adresse de livraison complète
-  - Quantité désirée
-- Cliquez sur "Passer la Commande"
-- Vous serez redirigé vers la page de confirmation
+1. **Customer visits** your landing page
 
-### Panel Admin
-- Accédez à `http://localhost:3000/admin`
-- **Ajouter un produit**: Cliquez sur "Ajouter un Produit"
-  - Nom du produit
-  - Description
+2. **Views product** details (name, price, description, stock)### Page Produit
+
+3. **Fills order form** with their details- Remplissez le formulaire avec:
+
+4. **Submits order** - gets confirmation message  - Nom complet
+
+5. **You receive** order details in Telegram instantly  - Numéro de téléphone tunisien (ex: 20123456 ou +216 20123456)
+
+  - Adresse de livraison complète
+
+## 🎨 Customization  - Quantité désirée
+
+- Cliquez sur "Passer la Commande"
+
+### Change Product Details- Vous serez redirigé vers la page de confirmation
+
+Edit the `PRODUCT` object in `app/page.tsx` to update:
+
+- Product name### Panel Admin
+
+- Description  - Accédez à `http://localhost:3000/admin`
+
+- Price (in DT - Tunisian Dinars)- **Ajouter un produit**: Cliquez sur "Ajouter un Produit"
+
+- Image URL  - Nom du produit
+
+- Stock quantity  - Description
+
   - Prix (en DT)
-  - Stock disponible
-  - URL de l'image du produit
-- **Modifier un produit**: Cliquez sur "Modifier" sur la carte du produit
-- **Supprimer un produit**: Cliquez sur "Supprimer" (avec confirmation)
+
+### Update Styling  - Stock disponible
+
+- Colors and fonts are in `tailwind.config.ts`  - URL de l'image du produit
+
+- Main styling uses Tailwind CSS classes- **Modifier un produit**: Cliquez sur "Modifier" sur la carte du produit
+
+- Orange theme with clean, modern design- **Supprimer un produit**: Cliquez sur "Supprimer" (avec confirmation)
+
 - **Voir les commandes récentes**: Tableau des dernières commandes
 
-## 🎨 Personnalisation
+### Telegram Message Format
 
-### Couleurs
-Les couleurs sont définies dans `tailwind.config.ts`:
-- Primary (Orange): `#F89520`
-- Primary Dark: `#E07A0C`
+The Telegram message includes:## 🎨 Personnalisation
+
+- 📦 Product name and price
+
+- 📊 Quantity ordered### Couleurs
+
+- 💳 Total priceLes couleurs sont définies dans `tailwind.config.ts`:
+
+- 👤 Customer details (name, phone, address)- Primary (Orange): `#F89520`
+
+- 📅 Order timestamp- Primary Dark: `#E07A0C`
+
 - Dark (Noir): `#1A1A1A`
 
+## 🌐 Deployment
+
 ### Logo
-Remplacez le fichier logo dans le dossier `public/` si nécessaire.
 
-## 📂 Structure du Projet
+### Vercel (Recommended)Remplacez le fichier logo dans le dossier `public/` si nécessaire.
 
-```
-nova store/
-├── app/
-│   ├── admin/              # Pages admin
+1. Push code to GitHub
+
+2. Connect to Vercel## 📂 Structure du Projet
+
+3. Add environment variables:
+
+   - `NEXT_PUBLIC_APP_URL` = your vercel app URL```
+
+   - `TELEGRAM_BOT_TOKEN` = your bot tokennova store/
+
+   - `TELEGRAM_CHAT_ID` = your chat ID├── app/
+
+4. Deploy!│   ├── admin/              # Pages admin
+
 │   ├── api/                # Routes API
-│   ├── produit/[id]/       # Page détail produit
-│   ├── merci/              # Page confirmation
-│   ├── layout.tsx          # Layout principal
-│   ├── page.tsx            # Page d'accueil (boutique)
-│   └── globals.css         # Styles globaux
-├── components/
+
+### Environment Variables for Production│   ├── produit/[id]/       # Page détail produit
+
+```bash│   ├── merci/              # Page confirmation
+
+NEXT_PUBLIC_APP_URL="https://your-app.vercel.app"│   ├── layout.tsx          # Layout principal
+
+TELEGRAM_BOT_TOKEN="your-telegram-bot-token"│   ├── page.tsx            # Page d'accueil (boutique)
+
+TELEGRAM_CHAT_ID="your-telegram-chat-id"│   └── globals.css         # Styles globaux
+
+```├── components/
+
 │   ├── admin/              # Composants admin
-│   │   ├── ProductForm.tsx
+
+## 📞 Support│   │   ├── ProductForm.tsx
+
 │   │   └── ProductList.tsx
-│   └── OrderForm.tsx       # Formulaire de commande
+
+Simple and lightweight - no complex database, no admin panel, just a clean landing page that sends orders to Telegram.│   └── OrderForm.tsx       # Formulaire de commande
+
 ├── lib/
-│   └── prisma.ts           # Client Prisma
-├── prisma/
-│   ├── schema.prisma       # Schéma de base de données
-│   └── dev.db              # Base de données SQLite
-├── public/                 # Fichiers statiques
+
+Perfect for:│   └── prisma.ts           # Client Prisma
+
+- Single product sales├── prisma/
+
+- Pre-orders and launches  │   ├── schema.prisma       # Schéma de base de données
+
+- Simple e-commerce needs│   └── dev.db              # Base de données SQLite
+
+- Quick setup and deployment├── public/                 # Fichiers statiques
+
 ├── package.json
-├── tsconfig.json
+
+---├── tsconfig.json
+
 └── tailwind.config.ts
-```
+
+**Ready to sell! 🚀**```
 
 ## 🗄️ Base de Données
 
